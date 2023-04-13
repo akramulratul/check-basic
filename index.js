@@ -35,7 +35,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use(cors());
-
+app.use(express.static(path.join(__dirname, "/src")));
 app.get("/", (req, res) => {
   res.status(200).json({
     message: "API is okay if you want to check",
